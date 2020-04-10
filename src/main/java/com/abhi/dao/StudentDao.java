@@ -35,4 +35,18 @@ public class StudentDao implements IStudentDao {
 		return (List<Student>)query.getResultList();
 	}
 
+	@Override
+	@Transactional(readOnly=false)
+	public Student saveStudent(Student student) {
+		entityManager.persist(student);
+		return student;
+	}
+
+	@Override
+	@Transactional(readOnly=false)
+	public Student updateStudent(Student student) {
+		entityManager.merge(student);
+		return student;
+	}
+
 }

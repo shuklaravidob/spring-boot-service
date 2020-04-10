@@ -13,4 +13,8 @@ public interface IStudentDao {
 	
 	List<Student> getStudents(Integer studId);
 
+	Student saveStudent(Student student);
+
+	Student updateStudent(Student student);
+
 }
