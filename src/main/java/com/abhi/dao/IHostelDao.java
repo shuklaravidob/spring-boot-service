@@ -11,6 +11,9 @@ import com.abhi.entity.Hostel;
 public interface IHostelDao {
 	
 	List<Hostel> getHostels(Integer HostelId);
+    
+	Hostel saveHostel(Hostel hostel);
 
+	Hostel updateHostel(Hostel hostel);
 
 }

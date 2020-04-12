@@ -38,13 +38,13 @@ public class Hostel implements Serializable {
 	private String motherName;
 	
 	@Column(name="mother_contact")
-	private Integer motherContactNumber;
+	private Integer motherContact;
 	
 	@Column(name="father_name")
 	private String fatherName;
 	
 	@Column(name="father_contact")
-	private Integer fatherContactnumber;
+	private Integer fatherContact;
 	
 	@Column(name="date_of_birth")
 	@Temporal(TemporalType.DATE)
@@ -72,7 +72,7 @@ public class Hostel implements Serializable {
 	private String guardianName;
 	
 	@Column(name="guardian_contact")
-	private Integer guardianContactNumber;
+	private Integer guardianContact;
 	
 	@Column(name="email_id")
 	private String emailId;
@@ -91,7 +91,6 @@ public class Hostel implements Serializable {
 	public Integer getHostelId() {
 		return hostelId;
 	}
-
 	public void setHostelId(Integer hostelId) {
 		this.hostelId = hostelId;
 	}
@@ -128,12 +127,12 @@ public class Hostel implements Serializable {
 		this.motherName = motherName;
 	}
 
-	public Integer getMotherContactNumber() {
-		return motherContactNumber;
+	public Integer getMotherContact() {
+		return motherContact;
 	}
 
-	public void setMotherContactNumber(Integer motherContactNumber) {
-		this.motherContactNumber = motherContactNumber;
+	public void setMotherContact(Integer motherContact) {
+		this.motherContact = motherContact;
 	}
 
 	public String getFatherName() {
@@ -144,12 +143,12 @@ public class Hostel implements Serializable {
 		this.fatherName = fatherName;
 	}
 
-	public Integer getFatherContactnumber() {
-		return fatherContactnumber;
+	public Integer getFatherContact() {
+		return fatherContact;
 	}
 
-	public void setFatherContactnumber(Integer fatherContactnumber) {
-		this.fatherContactnumber = fatherContactnumber;
+	public void setFatherContact(Integer fatherContact) {
+		this.fatherContact = fatherContact;
 	}
 
 	public Date getDateOfBirth() {
@@ -216,12 +215,12 @@ public class Hostel implements Serializable {
 		this.guardianName = guardianName;
 	}
 
-	public Integer getGuardianContactNumber() {
-		return guardianContactNumber;
+	public Integer getGuardianContact() {
+		return guardianContact;
 	}
 
-	public void setGuardianContactNumber(Integer guardianContactNumber) {
-		this.guardianContactNumber = guardianContactNumber;
+	public void setGuardianContactNumber(Integer guardianContactNumber, Integer guardianContact) {
+		this.guardianContact = guardianContact;
 	}
 
 	public String getEmailId() {
@@ -244,11 +243,11 @@ public class Hostel implements Serializable {
 	public String toString() {
 		return "Hostels [hostelName=" + hostelName + ", hostelId=" + hostelId + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", rollNumber=" + rollNumber + ", motherName=" + motherName
-				+ ", motherContactNumber=" + motherContactNumber + ", fatherName=" + fatherName
-				+ ", fatherContactnumber=" + fatherContactnumber + ", dateOfBirth=" + dateOfBirth + ", course=" + course
+				+ ", motherContactNumber=" + motherContact + ", fatherName=" + fatherName
+				+ ", fatherContactnumber=" + fatherContact + ", dateOfBirth=" + dateOfBirth + ", course=" + course
 				+ ", branch=" + branch + ", year=" + year + ", semester=" + semester + ", roomNumber=" + roomNumber
 				+ ", idProof=" + idProof + ", guardianName=" + guardianName + ", guardianContactNumber="
-				+ guardianContactNumber + ", emailId=" + emailId + ", contactNumber=" + contactNumber + "]";
+				+ guardianContact + ", emailId=" + emailId + ", contactNumber=" + contactNumber + "]";
 	}
 
 	@Override
@@ -260,16 +259,16 @@ public class Hostel implements Serializable {
 		result = prime * result + ((course == null) ? 0 : course.hashCode());
 		result = prime * result + ((dateOfBirth == null) ? 0 : dateOfBirth.hashCode());
 		result = prime * result + ((emailId == null) ? 0 : emailId.hashCode());
-		result = prime * result + ((fatherContactnumber == null) ? 0 : fatherContactnumber.hashCode());
+		result = prime * result + ((fatherContact == null) ? 0 : fatherContact.hashCode());
 		result = prime * result + ((fatherName == null) ? 0 : fatherName.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + ((guardianContactNumber == null) ? 0 : guardianContactNumber.hashCode());
+		result = prime * result + ((guardianContact == null) ? 0 : guardianContact.hashCode());
 		result = prime * result + ((guardianName == null) ? 0 : guardianName.hashCode());
 		result = prime * result + ((hostelId == null) ? 0 : hostelId.hashCode());
 		result = prime * result + ((hostelName == null) ? 0 : hostelName.hashCode());
 		result = prime * result + ((idProof == null) ? 0 : idProof.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
-		result = prime * result + ((motherContactNumber == null) ? 0 : motherContactNumber.hashCode());
+		result = prime * result + ((motherContact == null) ? 0 : motherContact.hashCode());
 		result = prime * result + ((motherName == null) ? 0 : motherName.hashCode());
 		result = prime * result + ((rollNumber == null) ? 0 : rollNumber.hashCode());
 		result = prime * result + ((roomNumber == null) ? 0 : roomNumber.hashCode());
@@ -312,10 +311,10 @@ public class Hostel implements Serializable {
 				return false;
 		} else if (!emailId.equals(other.emailId))
 			return false;
-		if (fatherContactnumber == null) {
-			if (other.fatherContactnumber != null)
+		if (fatherContact == null) {
+			if (other.fatherContact != null)
 				return false;
-		} else if (!fatherContactnumber.equals(other.fatherContactnumber))
+		} else if (!fatherContact.equals(other.fatherContact))
 			return false;
 		if (fatherName == null) {
 			if (other.fatherName != null)
@@ -327,10 +326,10 @@ public class Hostel implements Serializable {
 				return false;
 		} else if (!firstName.equals(other.firstName))
 			return false;
-		if (guardianContactNumber == null) {
-			if (other.guardianContactNumber != null)
+		if (guardianContact == null) {
+			if (other.guardianContact != null)
 				return false;
-		} else if (!guardianContactNumber.equals(other.guardianContactNumber))
+		} else if (!guardianContact.equals(other.guardianContact))
 			return false;
 		if (guardianName == null) {
 			if (other.guardianName != null)
@@ -357,10 +356,10 @@ public class Hostel implements Serializable {
 				return false;
 		} else if (!lastName.equals(other.lastName))
 			return false;
-		if (motherContactNumber == null) {
-			if (other.motherContactNumber != null)
+		if (motherContact == null) {
+			if (other.motherContact != null)
 				return false;
-		} else if (!motherContactNumber.equals(other.motherContactNumber))
+		} else if (!motherContact.equals(other.motherContact))
 			return false;
 		if (motherName == null) {
 			if (other.motherName != null)

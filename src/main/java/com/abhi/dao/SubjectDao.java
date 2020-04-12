@@ -35,5 +35,18 @@ public class SubjectDao implements ISubjectDao {
 			query.setParameter("subId", subId);
 		return (List<Subject>)query.getResultList();
 	}
+	@Override
+	@Transactional(readOnly=false)
+	public Subject saveSubject(Subject subject) {
+		entityManager.persist(subject);
+		return subject;
+	}
+
+	@Override
+	@Transactional(readOnly=false)
+	public Subject updateSubject(Subject subject) {
+		entityManager.merge(subject);
+		return subject;
+	}
 
 }

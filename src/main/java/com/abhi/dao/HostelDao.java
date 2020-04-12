@@ -35,6 +35,19 @@ public class HostelDao implements IHostelDao {
 			query.setParameter("hostelId", hostelId);
 		return (List<Hostel>)query.getResultList();
 	}
+	@Override
+	@Transactional(readOnly=false)
+	public Hostel saveHostel(Hostel hostel) {
+		entityManager.persist(hostel);
+		return hostel;
+	}
+
+	@Override
+	@Transactional(readOnly=false)
+	public Hostel updateHostel(Hostel hostel) {
+		entityManager.merge(hostel);
+		return hostel;
+	}
 
 
 }

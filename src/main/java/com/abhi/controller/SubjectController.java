@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,6 +35,17 @@ public class SubjectController {
 	public List<Subject> getStudent(@PathVariable("subId") Integer subId) {
 		List<Subject> subjects = subjectService.getSubjects(subId);
 		return subjects;
+	}
+	
+	@PostMapping(path = {"/subject"})
+	public Subject saveSubject(@RequestBody Subject subject) {
+		Subject subjectR = subjectService.saveSubject(subject);
+		return subjectR;
+	}
+	@PutMapping(path = {"/subject"})
+	public Subject updateSubject(@RequestBody Subject subject) {
+		Subject subjectR = subjectService.updateSubject(subject);
+		return subjectR;
 	}
 
 }

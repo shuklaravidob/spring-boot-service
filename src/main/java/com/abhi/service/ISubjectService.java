@@ -13,5 +13,9 @@ import com.abhi.entity.Subject;
 public interface ISubjectService {
 	
 	List<Subject> getSubjects(Integer subId);
+    
+	Subject saveSubject(Subject subject);
+
+	Subject updateSubject(Subject subject);
 
 }

@@ -12,5 +12,8 @@ import com.abhi.entity.Subject;
 public interface ISubjectDao {
 	
 	List<Subject> getSubjects(Integer subId);
+    
+	Subject saveSubject(Subject subject);
 
+	Subject updateSubject(Subject subject);
 }
