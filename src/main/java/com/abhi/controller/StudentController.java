@@ -35,12 +35,12 @@ public class StudentController {
 		List<Student> students = studentService.getStudents(studId);
 		return students;
 	}
-	@PostMapping(path = {"/student"})
+	@PostMapping(path = {"/students"})
 	public Student saveStudent(@RequestBody Student student) {
 		Student studentR = studentService.saveStudent(student);
 		return studentR;
 	}
-	@PutMapping(path = {"/student"})
+	@PutMapping(path = {"/students"})
 	public Student updateStudent(@RequestBody Student student) {
 		Student studentR = studentService.updateStudent(student);
 		return studentR;

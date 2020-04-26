@@ -1,6 +1,7 @@
 package com.abhi.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -33,7 +34,7 @@ public class Student implements Serializable{
 	private String lastName;
 	
 	@Column(name="roll_number")
-	private Integer rollNumber;
+	private BigDecimal rollNumber;
 	
 	@Column(name="date_of_birth")
 	@Temporal(TemporalType.DATE)
@@ -43,7 +44,18 @@ public class Student implements Serializable{
 	private String address;
 	
 	@Column(name="contact_number")
-	private Integer contactNumber;
+	private BigDecimal contactNumber;
+	
+	@Column(name="email")
+	private String email;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public Integer getStudId() {
 		return studId;
@@ -69,11 +81,11 @@ public class Student implements Serializable{
 		this.lastName = lastName;
 	}
 
-	public Integer getRollNumber() {
+	public BigDecimal getRollNumber() {
 		return rollNumber;
 	}
 
-	public void setRollNumber(Integer rollNumber) {
+	public void setRollNumber(BigDecimal rollNumber) {
 		this.rollNumber = rollNumber;
 	}
 
@@ -93,11 +105,11 @@ public class Student implements Serializable{
 		this.address = address;
 	}
 
-	public Integer getContactNumber() {
+	public BigDecimal getContactNumber() {
 		return contactNumber;
 	}
 
-	public void setContactNumber(Integer contactNumber) {
+	public void setContactNumber(BigDecimal contactNumber) {
 		this.contactNumber = contactNumber;
 	}
 
