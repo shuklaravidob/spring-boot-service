@@ -16,5 +16,7 @@ public interface IStudentDao {
 	Student saveStudent(Student student);
 
 	Student updateStudent(Student student);
+	
+	Student deleteStudent(Student student);
 
 }

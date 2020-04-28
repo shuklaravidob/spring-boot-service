@@ -49,4 +49,11 @@ public class StudentDao implements IStudentDao {
 		return student;
 	}
 
+	@Override
+	public Student deleteStudent(Student student) {
+		String sql = "delete from Student s where s.studId = :studId";
+		entityManager.createQuery(sql).setParameter("studId", student.getStudId()).executeUpdate();
+		return student;
+	}
+
 }

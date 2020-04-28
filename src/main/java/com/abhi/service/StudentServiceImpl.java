@@ -39,4 +39,9 @@ public class StudentServiceImpl implements IStudentService {
 		return studentDao.updateStudent(student);
 	}
 
+	@Override
+	public Student deleteStudent(Student student) {
+		return studentDao.deleteStudent(student);
+	}
+
 }
