@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.abhi.dao.IHostelDao;
 import com.abhi.entity.Hostel;
+import com.abhi.entity.Student;
+import com.abhi.entity.Subject;
 
 
 
@@ -36,5 +38,10 @@ public class HostelServiceImpl implements IHostelService {
 	@Transactional(readOnly=false)
 	public Hostel updateHostel(Hostel hostel) {
 		return hostelDao.updateHostel(hostel);
+	}
+	
+	@Override
+	public Hostel deleteHostel(Hostel hostel) {
+		return hostelDao.deleteHostel(hostel);
 	}
 }

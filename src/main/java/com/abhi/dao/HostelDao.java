@@ -13,6 +13,7 @@ import com.abhi.entity.Hostel;
 
 
 
+
 /**
  * @author ravi
  *
@@ -46,6 +47,13 @@ public class HostelDao implements IHostelDao {
 	@Transactional(readOnly=false)
 	public Hostel updateHostel(Hostel hostel) {
 		entityManager.merge(hostel);
+		return hostel;
+	}
+	
+	@Override
+	public Hostel deleteHostel(Hostel hostel) {
+		String sql = "delete from Hostel s where s.hostelId = :hostelId";
+		entityManager.createQuery(sql).setParameter("studId", hostel.getHostelId()).executeUpdate();
 		return hostel;
 	}
 

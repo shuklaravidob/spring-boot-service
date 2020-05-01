@@ -2,6 +2,7 @@ package com.abhi.dao;
 
 import java.util.List;
 
+import com.abhi.entity.Student;
 import com.abhi.entity.Subject;
 
 
@@ -16,4 +17,6 @@ public interface ISubjectDao {
 	Subject saveSubject(Subject subject);
 
 	Subject updateSubject(Subject subject);
+	
+	Subject deleteSubject(Subject subject);
 }

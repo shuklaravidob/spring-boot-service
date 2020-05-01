@@ -18,4 +18,5 @@ public interface ISubjectService {
 
 	Subject updateSubject(Subject subject);
 
+	Subject deleteSubject(Subject subject);
 }

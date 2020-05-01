@@ -48,5 +48,11 @@ public class SubjectDao implements ISubjectDao {
 		entityManager.merge(subject);
 		return subject;
 	}
+	@Override
+	public Subject deleteSubject(Subject subject) {
+		String sql = "delete from Subject s where s.subId = :subdId";
+		entityManager.createQuery(sql).setParameter("subId", subject.getSubId()).executeUpdate();
+		return subject;
+	}
 
 }

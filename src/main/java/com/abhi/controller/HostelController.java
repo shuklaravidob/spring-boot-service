@@ -3,6 +3,7 @@ package com.abhi.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,14 +38,19 @@ public class HostelController {
 		return hostels;
 	}
 
-	@PostMapping(path = {"/hostel"})
+	@PostMapping(path = {"/hostels"})
 	public Hostel saveHostel(@RequestBody Hostel hostel) {
 		Hostel hostelR = hostelService.saveHostel(hostel);
 		return hostelR;
 	}
-	@PutMapping(path = {"/hostel"})
+	@PutMapping(path = {"/hostels"})
 	public Hostel updateHostel(@RequestBody Hostel hostel) {
 		Hostel hostelR = hostelService.updateHostel(hostel);
+		return hostelR;
+	}
+	@DeleteMapping(path = {"/hostels"})
+	public Hostel deleteHostel(@RequestBody Hostel hostel) {
+		Hostel hostelR = hostelService.deleteHostel(hostel);
 		return hostelR;
 	}
 }

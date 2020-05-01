@@ -37,4 +37,8 @@ public class SubjectServiceImpl implements ISubjectService {
 		return subjectDao.updateSubject(subject);
 	}
 
+	@Override
+	public Subject deleteSubject(Subject subject) {
+		return subjectDao.deleteSubject(subject);
+	}
 }

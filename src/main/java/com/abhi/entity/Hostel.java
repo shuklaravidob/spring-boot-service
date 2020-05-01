@@ -74,6 +74,9 @@ public class Hostel implements Serializable {
 	@Column(name="guardian_contact")
 	private Integer guardianContact;
 	
+	@Column(name="address")
+	private String address;
+	
 	@Column(name="email_id")
 	private String emailId;
 	
@@ -222,7 +225,14 @@ public class Hostel implements Serializable {
 	public void setGuardianContactNumber(Integer guardianContactNumber, Integer guardianContact) {
 		this.guardianContact = guardianContact;
 	}
+	
+	public String getAddress() {
+		return address;
+	}
 
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	public String getEmailId() {
 		return emailId;
 	}
@@ -239,21 +249,30 @@ public class Hostel implements Serializable {
 		this.contactNumber = contactNumber;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public void setGuardianContact(Integer guardianContact) {
+		this.guardianContact = guardianContact;
+	}
+
 	@Override
 	public String toString() {
-		return "Hostels [hostelName=" + hostelName + ", hostelId=" + hostelId + ", firstName=" + firstName
+		return "Hostel [hostelName=" + hostelName + ", hostelId=" + hostelId + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", rollNumber=" + rollNumber + ", motherName=" + motherName
-				+ ", motherContactNumber=" + motherContact + ", fatherName=" + fatherName
-				+ ", fatherContactnumber=" + fatherContact + ", dateOfBirth=" + dateOfBirth + ", course=" + course
-				+ ", branch=" + branch + ", year=" + year + ", semester=" + semester + ", roomNumber=" + roomNumber
-				+ ", idProof=" + idProof + ", guardianName=" + guardianName + ", guardianContactNumber="
-				+ guardianContact + ", emailId=" + emailId + ", contactNumber=" + contactNumber + "]";
+				+ ", motherContact=" + motherContact + ", fatherName=" + fatherName + ", fatherContact=" + fatherContact
+				+ ", dateOfBirth=" + dateOfBirth + ", course=" + course + ", branch=" + branch + ", year=" + year
+				+ ", semester=" + semester + ", roomNumber=" + roomNumber + ", idProof=" + idProof + ", guardianName="
+				+ guardianName + ", guardianContact=" + guardianContact + ", address=" + address + ", emailId="
+				+ emailId + ", contactNumber=" + contactNumber + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
 		result = prime * result + ((branch == null) ? 0 : branch.hashCode());
 		result = prime * result + ((contactNumber == null) ? 0 : contactNumber.hashCode());
 		result = prime * result + ((course == null) ? 0 : course.hashCode());
@@ -286,6 +305,11 @@ public class Hostel implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Hostel other = (Hostel) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
 		if (branch == null) {
 			if (other.branch != null)
 				return false;
