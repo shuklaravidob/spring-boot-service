@@ -50,7 +50,7 @@ public class SubjectDao implements ISubjectDao {
 	}
 	@Override
 	public Subject deleteSubject(Subject subject) {
-		String sql = "delete from Subject s where s.subId = :subdId";
+		String sql = "delete from Subject s where s.subId = :subId";
 		entityManager.createQuery(sql).setParameter("subId", subject.getSubId()).executeUpdate();
 		return subject;
 	}
