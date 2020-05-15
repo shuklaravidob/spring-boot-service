@@ -23,31 +23,31 @@ public class UserController {
 	@Autowired
 	private IUserService userService;
 
-	@GetMapping(path = { "/user" })
+	@GetMapping(path = { "/users" })
 	public List<User> getUsers() {
 		List<User> users = userService.getUsers(null);
 		return users;
 	}
 
-	@GetMapping(path = { "/user/{userId}" })
+	@GetMapping(path = { "/users/{userId}" })
 	public List<User> getUsers(@PathVariable("userId") Integer userId) {
 		List<User> users = userService.getUsers(userId);
 		return users;
 	}
 
-	@PostMapping(path = { "/user" })
+	@PostMapping(path = { "/users" })
 	public User saveUser(@RequestBody User user) {
 		User userR = userService.saveUser(user);
 		return userR;
 	}
 
-	@PutMapping(path = { "/user" })
+	@PutMapping(path = { "/users" })
 	public User updateUser(@RequestBody User user) {
 		User userR = userService.updateUser(user);
 		return userR;
 	}
 
-	@DeleteMapping(path = { "/user" })
+	@DeleteMapping(path = { "/users" })
 	public User deleteUser(@RequestBody User user) {
 		User userR = userService.deleteUser(user);
 		return userR;
